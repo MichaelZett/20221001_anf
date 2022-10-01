@@ -18,5 +18,4 @@ public class EingabeValidierungAutoclose {
 		System.out.println("Du hast eingegeben: " + wert);
 
 	}
-
 }
