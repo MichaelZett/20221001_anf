@@ -13,4 +13,8 @@ public enum Geschlecht {
 		return anzeige;
 	}
 
+	@Override
+	public String toString() {
+		return anzeige;
+	}
 }

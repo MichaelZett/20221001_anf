@@ -51,4 +51,10 @@ public class Mitarbeiter implements IdBesitzer {
 		return id;
 	}
 
+	@Override
+	public String toString() {
+		return "Mitarbeiter [id=" + id + ", vorname=" + vorname + ", nachname=" + nachname + ", geschlecht="
+				+ geschlecht + "]";
+	}
+
 }
