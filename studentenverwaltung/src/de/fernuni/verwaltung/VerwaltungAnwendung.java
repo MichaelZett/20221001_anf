@@ -22,6 +22,8 @@ public class VerwaltungAnwendung {
 		UUID frauPsId = verwaltung.mitarbeiterAnlegen("Frau", "P", Geschlecht.W);
 		Mitarbeiter frauP = verwaltung.getMitarbeiter(frauPsId);
 		System.out.println("Student Frau P: " + frauP);
+
+		verwaltung.lassMachen();
 	}
 
 }

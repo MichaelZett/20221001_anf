@@ -4,14 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-import de.fernuni.allgemein.IdBesitzer;
 import de.fernuni.mitarbeiter.Mitarbeiter;
+import de.fernuni.mitarbeiter.Person;
 import de.fernuni.statistik.Monitor;
 import de.fernuni.student.Geschlecht;
 import de.fernuni.student.Student;
 
 public class Verwaltung {
-	private static final Map<UUID, IdBesitzer> SPEICHER = new HashMap<>();
+	private static final Map<UUID, Person> SPEICHER = new HashMap<>();
 
 	public UUID studentAnlegen(String vorname, String nachname, Geschlecht geschlecht) {
 		System.out.println("Anzahl Studenten vorher: " + Monitor.showNumberOfStudents());
@@ -22,7 +22,7 @@ public class Verwaltung {
 	}
 
 	public Student getStudent(UUID id) {
-		IdBesitzer idBesitzer = SPEICHER.get(id);
+		Person idBesitzer = SPEICHER.get(id);
 		if (idBesitzer instanceof Student s) {
 			return s;
 		}
@@ -40,10 +40,17 @@ public class Verwaltung {
 	}
 
 	public Mitarbeiter getMitarbeiter(UUID id) {
-		IdBesitzer idBesitzer = SPEICHER.get(id);
+		Person idBesitzer = SPEICHER.get(id);
 		if (idBesitzer instanceof Mitarbeiter m) {
 			return m;
 		}
 		return null;
+	}
+
+	public void lassMachen() {
+		for (Person p : SPEICHER.values()) {
+			p.machWas();
+		}
+
 	}
 }
