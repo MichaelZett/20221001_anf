@@ -1,5 +1,7 @@
 package de.fernuni.verwaltung;
 
+import de.fernuni.student.Geschlecht;
+
 public class VerwaltungAnwendung {
 	private Verwaltung verwaltung = new Verwaltung();
 
@@ -8,8 +10,8 @@ public class VerwaltungAnwendung {
 	}
 
 	private void doSomething() {
-		verwaltung.studentAnlegen("Peter", "Müller");
-		verwaltung.studentAnlegen("Annika", "Meyer");
+		verwaltung.studentAnlegen("Peter", "Müller", Geschlecht.M);
+		verwaltung.studentAnlegen("Annika", "Meyer", Geschlecht.W);
 	}
 
 }

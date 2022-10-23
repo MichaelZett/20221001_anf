@@ -7,16 +7,18 @@ public class Student {
 	private final UUID id;
 	private String vorname;
 	private String nachname;
+	private Geschlecht geschlecht;
 
 	private Student() {
 		anzahl++;
 		id = UUID.randomUUID();
 	}
 
-	public Student(String vorname, String nachname) {
+	public Student(String vorname, String nachname, Geschlecht geschlecht) {
 		this();
 		this.vorname = vorname;
 		this.nachname = nachname;
+		this.geschlecht = geschlecht;
 	}
 
 	public String getVorname() {
@@ -41,6 +43,6 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return nachname + "," + vorname + " mit id: " + id.toString();
+		return nachname + "," + vorname + " mit id: " + id.toString() + " mit Geschlecht: " + geschlecht.getAnzeige();
 	}
 }
